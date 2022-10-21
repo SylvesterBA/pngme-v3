@@ -1,0 +1,33 @@
+.button {  
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+.buttonPrimary {
+  color: white;
+  background-color: #300038;
+}
+.buttonSecondary {
+  color: white;
+  background-color: #E824B1;
+}
+.buttonOutlined {
+  color: #300038;
+  background-color: transparent;
+  border: 2px solid #300038;
+}
+.buttonSmall {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.buttonMedium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.buttonLarge {
+  font-size: 16px;
+  padding: 12px 24px;
+}
