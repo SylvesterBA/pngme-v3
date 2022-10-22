@@ -43,6 +43,9 @@ module.exports = {
 				"fs-14": "14px",
 				"fs-12": "12px",
 			},
+			screens: {
+				"3xl": '2000px',
+			}
 		},
 	},
 	plugins: [],
