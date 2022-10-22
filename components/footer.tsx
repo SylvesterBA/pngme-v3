@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import styles from "../styles/components/Footer.module.css";
 import Image from "next/image";
 import Card, { ETextFontSize } from "./card";
 

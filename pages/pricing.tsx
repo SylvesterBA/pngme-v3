@@ -93,8 +93,8 @@ const Pricing: NextPage = () => {
       </div>
 
       <div className={styles.cards}>
-        <div className="bg-dirty-white h-64 lg:h-24 w-full absolute t-0"></div>
-        <div className="lg:bg-dirty-white h-24 w-full absolute b-0"></div>
+        <div className="bg-dirty-white h-64 lg:h-24 w-full absolute top-0"></div>
+        <div className="lg:bg-dirty-white h-24 w-full absolute bottom-0"></div>
         <div className={styles.cardsContainer}>
           {_pricing.map((item, index) => (
             <PricingCard item={item} styles={styles} key={index} />

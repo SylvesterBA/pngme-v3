@@ -16,6 +16,9 @@ html,body{
   overflow-x: hidden;
 }
 
+.boxshadow {
+  box-shadow: 0 2px 15px rgba(0,0,0,.15);
+}
 /* body {
   background: #F1EEE880;
   color: #300038;
