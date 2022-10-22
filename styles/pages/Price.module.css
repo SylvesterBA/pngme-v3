@@ -1,0 +1,44 @@
+.pricingHeader {
+  @apply font-pngme-helvetica flex flex-col justify-start relative pt-20 px-4;
+}
+
+.pricingHeader > p {
+  font-size: 14px;
+}
+
+.pricingHeader > h1 {
+  font-size: 24px;
+}
+
+.circleImg {
+  display: none;
+}
+
+.switchButtons {
+  @apply py-12;
+  width: fit-content;
+}
+
+@media(min-width: 768px) {
+  .circleImg {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+  }
+
+  .pricingHeader {
+    @apply font-pngme-helvetica flex flex-col justify-center text-center items-center relative py-32;
+  }
+
+  .pricingHeader > p {
+    font-size: 18px;
+  }
+  
+  .pricingHeader > h1 {
+    font-size: 35.5px;
+  }
+  
+}
