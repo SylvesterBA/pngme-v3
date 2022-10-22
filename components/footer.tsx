@@ -71,7 +71,7 @@ const Footer = ({ ...props }: FooterProps) => {
 							<a className="leading-loose text-fs-14">Blog</a>
 						</section>
 
-						<section className="flex flex-col justify-between pr-16 lg:pr-0">
+						<section className="flex flex-col justify-between pr-16 sm:pr-0">
 							<span className="text-fs-22 font-bold text-white">Products</span>
 							<a className="leading-loose text-fs-14">Product One</a>
 							<a className="leading-loose text-fs-14">Product Two</a>
