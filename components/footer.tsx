@@ -61,7 +61,7 @@ const Footer = ({ ...props }: FooterProps) => {
 				</div>
 
 				<div className="h-full w-full flex flex-col lg:flex-row lg:justify-between ">
-					<div className="flex flex-row mb-8 lg:mb-0 justify-between lg:w-2/3 lg:justify-evenly">
+					<div className="flex flex-row mb-8 lg:mb-0 justify-between lg:w-2/3 lg:justify-around">
 						<section className="flex flex-col justify-between">
 							<span className="text-fs-22 font-bold text-white">Quick Links</span>
 							<a className="leading-loose text-fs-14">Home</a>
