@@ -12,158 +12,19 @@
   src: url("../public/fonts/HelveticaNeueLTPro-LtEx.otf");
 }
 
-html,body{
+html,body {
   overflow-x: hidden;
 }
 
 .boxshadow {
   box-shadow: 0 2px 15px rgba(0,0,0,.15);
 }
-/* body {
-  background: #F1EEE880;
-  color: #300038;
-  font-family: 'Inter', sans-serif;
-  position: relative;
-  min-height: 100vh;
-}
-
-h1 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 60px;
-}
-
-h2 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 44px;
-}
-
-h3 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 36px;
-}
-
-h4 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 28px;
-}
-
-.body-lg {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.body-lg-2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.body-md {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.body-md-2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.subtitle-1 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.subtitle-2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-a {
-  text-decoration: none;
-}
-
-nav {
-  background-color: #FFF;
-  padding: 2.5rem 5rem 2.5rem 5rem;
-  display: flex;
-} */
-
-/* .not-found {
-  text-align: center;
-}
-
-.not-found a {
-  color: #4979ff;
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-  }
-
-  h1 {
-    font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-    font-size: 28px;
-  }
-
-  h2 {
-    font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-    font-size: 26px;
-  }
-
-  h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-  }
-
-  .body-lg {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-  }
-
-  .body-lg-2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-  }
-
-  .body-md {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-  }
-
-  .body-md-2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 14x;
-  }
-} */
-/* GENERAL */
-
-.content {
-  width: 275px;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  text-align: center;
-  transform: translateY(5%);
-}
 
 label, .toggle {
   height: 2.8rem;
   border-radius: 100px;
 }
+
 label {
   width: 100%;
   background-color: #FFE4A0;
@@ -171,6 +32,7 @@ label {
   position: relative;
   cursor: pointer;
 }
+
 .toggle {
   position: absolute;
   width: 50%;
@@ -185,17 +47,6 @@ label {
 .dark {
   color: #300038;
 }
-
-.names {
-  font-weight: bolder;
-  width: 74%;
-  margin-left: 14%;
-  margin-top: 1%;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-}
-
 
 [type="checkbox"] {
   display: none;

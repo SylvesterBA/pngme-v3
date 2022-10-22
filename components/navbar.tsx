@@ -55,11 +55,11 @@ const Navbar = ({
 				</div>
 			</Link>
 
-			<NavBarLinks containerStyles="hidden md:flex " elementStyles="text-2xl font-normal px-4"/>
+			<NavBarLinks containerStyles="hidden md:flex" elementStyles="xl:text-xl font-normal xl:px-4"/>
 
 			<div className="hidden md:flex text-right">
 				<Link href="https://admin.pngme.com">
-					<Button type='secondary' label={buttonLabel || "Login"} additionalStyles="px-20 py-4" />
+					<Button type='secondary' label={buttonLabel || "Login"} additionalStyles="px-9 py-3 xl:px-20 xl:py-4" />
 				</Link>
 			</div>
 

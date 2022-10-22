@@ -93,10 +93,10 @@ const Footer = ({ ...props }: FooterProps) => {
 					</section>
 				</div>
 
-				<div className={`text-fs-14 pt-20`}>
+				<div className="text-fs-14 pt-20 w-full">
 					© Copyright 2022 PNGME, Inc. All Rights Reserved.
 				</div>
-				<div className={`text-fs-14 pt-20`}>
+				<div className="text-fs-14 pt-20 w-full flex justify-end">
 					<span>
 						<span className="cursor-pointer">
 							<Link href={"/terms-of-service"}>Terms of Service</Link> |{" "}

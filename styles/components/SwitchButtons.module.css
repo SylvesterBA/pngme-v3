@@ -1,0 +1,23 @@
+.content {
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  transform: translateY(5%);
+}
+
+.names {
+  font-weight: bolder;
+  width: 74%;
+  margin-left: 14%;
+  margin-top: 1%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.switchButtons {
+  @apply py-12;
+  width: fit-content;
+}

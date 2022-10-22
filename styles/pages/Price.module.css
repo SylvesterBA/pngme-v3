@@ -2,14 +2,6 @@
   @apply font-pngme-helvetica flex flex-col justify-start relative pt-20 px-4;
 }
 
-/* .pricingHeader > p {
-  font-size: 14px;
-}
-
-.pricingHeader > span {
-  font-size: 24px;
-} */
-
 .circleImg {
   display: none;
 }

@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { PricingCard } from '../components/pricing/card'
 
-import { SwitchButtons } from '../components/switchButtons'
+import { PricingFAQ } from '../components/pricing/faq'
+import { SwitchButtons } from '../components/pricing/switchButtons'
 import styles from '../styles/pages/Price.module.css'
 
 const _titles = ['Monthly', 'Annually']
@@ -83,7 +84,6 @@ const Pricing: NextPage = () => {
     <>
       <div className={styles.pricingHeader}>
         <picture className={styles.circleImg}>
-          {/* <source srcSet="/images/quarter-circle.svg" type="image/webp" /> */}
           <img src="/images/quarter-circle.svg" alt="Landscape picture" height={200} width={200}/>
         </picture>
 
@@ -102,16 +102,7 @@ const Pricing: NextPage = () => {
         </div>
       </div>
 
-      <div>
-        {/* FAQ */}
-      </div>
-
-      <div className="flex flex-col justify-center items-center py-12">
-        <p className="text-primary-pink font-bold text-2xl py-8">Have more questions?</p>
-
-        <button className="bg-primary-purple text-white py-4 px-10 font-bold w-60 rounded-full text-xl">Contact Sales</button>
-        <button className="bg-white border-2 text-primary-purple py-4 font-bold w-60 rounded-full my-5 border-primary-purple">Request a demo →</button>
-      </div>
+      <PricingFAQ styles={styles}/>
     </>
   )
 }
