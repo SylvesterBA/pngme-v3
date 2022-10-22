@@ -12,7 +12,7 @@
   src: url("../public/fonts/HelveticaNeueLTPro-LtEx.otf");
 }
 
-html,body {
+html, body {
   overflow-x: hidden;
 }
 
@@ -20,12 +20,21 @@ html,body {
   box-shadow: 0 2px 15px rgba(0,0,0,.15);
 }
 
-label, .toggle {
+.switchButtonContent {
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  transform: translateY(5%);
+}
+
+.switchButtonContent label, .toggle {
   height: 2.8rem;
   border-radius: 100px;
 }
 
-label {
+.switchButtonContent label {
   width: 100%;
   background-color: #FFE4A0;
   border-radius: 100px;
@@ -33,7 +42,7 @@ label {
   cursor: pointer;
 }
 
-.toggle {
+.switchButtonContent .toggle {
   position: absolute;
   width: 50%;
   background-color: #300038;
@@ -41,10 +50,11 @@ label {
   transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.light {
+.switchButtonContent .light {
   color: white;
 }
-.dark {
+
+.switchButtonContent .dark {
   color: #300038;
 }
 
@@ -52,13 +62,13 @@ label {
   display: none;
 }
 
-[type="checkbox"]:checked + .app .toggle{
+[type="checkbox"]:checked + .switchButtonContainer .toggle{
   transform: translateX(100%);
   background-color: #300038;
 }
-[type="checkbox"]:checked + .app .dark{
+[type="checkbox"]:checked + .switchButtonContainer .dark{
   color: white;
 }
-[type="checkbox"]:checked + .app .light{
+[type="checkbox"]:checked + .switchButtonContainer .light{
   color: #300038;
 }
