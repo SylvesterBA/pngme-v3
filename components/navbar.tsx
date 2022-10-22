@@ -1,6 +1,7 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Button from "./button";
+import Image from 'next/image'
 
 interface NavbarProps {
 	backgroundColor?: string;
@@ -17,13 +18,16 @@ enum ENavbarPageLinks {
 	blog = "Blog",
 }
 
-const NavBarLinks = () => (
-	<div className="col-span-8 text-center">
+const NavBarLinks = (
+	{ containerStyles, elementStyles, onSelect }: 
+	{ containerStyles: string, elementStyles?: string, onSelect?: () => void }
+) => (
+	<div className={containerStyles}>
 		{(Object.keys(ENavbarPageLinks) as (keyof typeof ENavbarPageLinks)[]).map(
 			(page, index) => {
 				return (
 					<Link href={page} key={index}>
-						<a className="ml-4 mr-4 font-semibold">{ENavbarPageLinks[page]}</a>
+						<a onClick={() => onSelect && onSelect()} className={`ml-4 mr-4 font-semibold ${elementStyles}`}>{ENavbarPageLinks[page]}</a>
 					</Link>
 				);
 			}
@@ -37,9 +41,11 @@ const Navbar = ({
 	buttonLink,
 	...props
 }: NavbarProps) => {
+	const [showMobileNavbar, setShowMobileNavbar] = useState<boolean>(false)
+
 	return (
 		<nav
-			className="bg-white grid grid-cols-12 items-center pt-9 pb-9 pl-20 pr-20"
+			className="bg-white flex justify-between items-center p-8 3xl:px-40 relative"
 			style={{ backgroundColor }}
 			{...props}
 		>
@@ -48,13 +54,35 @@ const Navbar = ({
 					Pngme
 				</div>
 			</Link>
-			<NavBarLinks />
-			<div className="navbar-button col-span-2 text-right">
+
+			<NavBarLinks containerStyles="hidden md:flex" elementStyles="xl:text-xl font-normal xl:px-4"/>
+
+			<div className="hidden md:flex text-right">
 				<Link href="https://admin.pngme.com">
-					<Button type='secondary' label={buttonLabel || "Login"} />
+					<Button type='secondary' label={buttonLabel || "Login"} additionalStyles="px-9 py-3 xl:px-20 xl:py-4" />
 				</Link>
 			</div>
+
+			<div className="md:hidden px-5 flex py-2" onClick={() => setShowMobileNavbar(!showMobileNavbar)}>
+				<Image src="/icons/burger-menu.svg" alt="burgerMenu" width={30} height={30} />
+			</div>
+
+			{showMobileNavbar && (
+				<div className="absolute bg-white left-2 right-2 top-32 justify-center align-middle pt-5 pb-10 boxshadow z-10">
+					<NavBarLinks
+						containerStyles="flex flex-col h-full items-center text-fs-22"
+						elementStyles="py-4"
+						onSelect={() => setShowMobileNavbar(false)}
+					/>
+
+					<div className="flex text-right justify-center mt-6">
+						<Link href="https://admin.pngme.com">
+							<Button type='secondary' label={buttonLabel || "Login"} additionalStyles="px-20 py-4" />
+						</Link>
+					</div>
+				</div>
+			)}
 		</nav>
 	);
-};
+}; 
 export default Navbar;

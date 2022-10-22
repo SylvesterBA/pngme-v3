@@ -19,6 +19,10 @@ interface ButtonProps {
 	 * Button contents
 	 */
 	label: string;
+		/**
+	 * Button additional styles
+	 */
+	additionalStyles?: string;
 	/**
 	 * Optional click handler
 	 */
@@ -33,6 +37,7 @@ const Button = ({
 	size = "medium",
 	backgroundColor,
 	label,
+	additionalStyles,
 	...props
 }: ButtonProps) => {
 	let mode = styles.buttonPrimary;
@@ -55,7 +60,7 @@ const Button = ({
 	return (
 		<button
 			type="button"
-			className={[styles.button, buttonSizeStyle, mode].join(" ")}
+			className={[styles.button, additionalStyles || buttonSizeStyle, mode].join(" ")}
 			style={{ backgroundColor }}
 			{...props}
 		>

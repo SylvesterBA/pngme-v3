@@ -1,137 +1,74 @@
-@import '/fonts/HelveticaNeueLTPro-LtEx.otf';
-@import '/fonts/HelveticaNeueLTPro-Md.otf';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* body {
-  background: #F1EEE880;
-  color: #300038;
-  font-family: 'Inter', sans-serif;
-  position: relative;
-  min-height: 100vh;
+@font-face {
+  font-family: "Helvetica Neue LT Pro 65 Medium";
+  src: url("../public/fonts/HelveticaNeueLTPro-Md.otf");
 }
 
-h1 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 60px;
+@font-face {
+  font-family: "Helvetica Neue LT Pro 43 Light Extended";
+  src: url("../public/fonts/HelveticaNeueLTPro-LtEx.otf");
 }
 
-h2 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 44px;
+html, body {
+  overflow-x: hidden;
 }
 
-h3 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 36px;
+.boxshadow {
+  box-shadow: 0 2px 15px rgba(0,0,0,.15);
 }
 
-h4 {
-  font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-  font-size: 28px;
-}
-
-.body-lg {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.body-lg-2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.body-md {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.body-md-2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.subtitle-1 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.subtitle-2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-a {
-  text-decoration: none;
-}
-
-nav {
-  background-color: #FFF;
-  padding: 2.5rem 5rem 2.5rem 5rem;
+.switchButtonContent {
+  width: 275px;
   display: flex;
-} */
-
-/* .not-found {
+  flex-direction: column;
+  margin: auto;
   text-align: center;
+  transform: translateY(5%);
 }
 
-.not-found a {
-  color: #4979ff;
-  text-decoration: underline;
+.switchButtonContent label, .toggle {
+  height: 2.8rem;
+  border-radius: 100px;
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-  }
+.switchButtonContent label {
+  width: 100%;
+  background-color: #FFE4A0;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+}
 
-  h1 {
-    font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-    font-size: 28px;
-  }
+.switchButtonContent .toggle {
+  position: absolute;
+  width: 50%;
+  background-color: #300038;
+  box-shadow: 0 2px 15px rgba(0,0,0,.15);
+  transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-  h2 {
-    font-family: 'Helvetica Neue LT Std', 'Helvetica 43 Light Extended', sans-serif;
-    font-size: 26px;
-  }
+.switchButtonContent .light {
+  color: white;
+}
 
-  h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-  }
+.switchButtonContent .dark {
+  color: #300038;
+}
 
-  .body-lg {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-  }
+[type="checkbox"] {
+  display: none;
+}
 
-  .body-lg-2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-  }
-
-  .body-md {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-  }
-
-  .body-md-2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 14x;
-  }
-} */
+[type="checkbox"]:checked + .switchButtonContainer .toggle{
+  transform: translateX(100%);
+  background-color: #300038;
+}
+[type="checkbox"]:checked + .switchButtonContainer .dark{
+  color: white;
+}
+[type="checkbox"]:checked + .switchButtonContainer .light{
+  color: #300038;
+}
