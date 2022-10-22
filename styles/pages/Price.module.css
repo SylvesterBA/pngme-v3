@@ -19,6 +19,25 @@
   width: fit-content;
 }
 
+.cards {
+  background: #FFE4A0;
+  position: relative;
+  @apply pb-10;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  @apply mx-4 my-4 py-12 flex flex-col px-8;
+}
+
+.cardImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 @media(min-width: 768px) {
   .circleImg {
     display: block;
