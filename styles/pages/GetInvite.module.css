@@ -1,0 +1,12 @@
+.image_wrapper > span {
+  position: absolute !important;
+  width: 100% !important;
+  bottom: 0 !important;
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1536px) {
+
+}

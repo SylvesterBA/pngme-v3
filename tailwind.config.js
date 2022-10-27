@@ -23,6 +23,7 @@ module.exports = {
 				"dirty-white": "#F8F6F3",
 			},
 			fontFamily: {
+				"hn-43": "Helvetica Neue LT Pro 43 Light Extended",
 				"pngme-helvetica": [
 					'"Helvetica Neue LT Pro 43 Light Extended"',
 					'"Helvetica Neue LT Pro 65 Medium"',
@@ -45,6 +46,18 @@ module.exports = {
 			},
 			screens: {
 				"3xl": '2000px',
+			},
+			width: {
+				"lg": '28rem',
+				"xl": '32rem',
+				"2xl": '36rem',
+				"3xl": '40rem',
+				"4xl": '44rem',
+				"5xl": '48rem',
+				"6xl": '52rem',
+			},
+			minWidth: {
+				'lg': '28rem',
 			}
 		},
 	},

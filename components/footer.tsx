@@ -1,23 +1,30 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from 'next/router'
+
 import Card, { ETextFontSize } from "./card";
 
 interface FooterProps {}
 
 const Footer = ({ ...props }: FooterProps) => {
+	const router = useRouter()
+	console.log(router.pathname);
+	
 	return (
 		<footer {...props}>
-			<div className="bg-[url('/images/bg-pattern-full.svg')] bg-center bg-cover bg-no-repeat items-center justify-center p-12 sm:p-28">
-				<Card
-					buttonLabel="Sign up"
-					topHeaderText="Want to get started?"
-					topHeaderTextSize={ETextFontSize.thirtySix}
-					midHeaderText="Test Pngme for free."
-					midHeaderTextSize={ETextFontSize.sixty}
-					buttonLink="#"
-				/>
-			</div>
+			{router.pathname !== '/get_invite' && (
+				<div className="bg-[url('/images/bg-pattern-full.svg')] bg-center bg-cover bg-no-repeat items-center justify-center p-12 sm:p-28">
+					<Card
+						buttonLabel="Sign up"
+						topHeaderText="Want to get started?"
+						topHeaderTextSize={ETextFontSize.thirtySix}
+						midHeaderText="Test Pngme for free."
+						midHeaderTextSize={ETextFontSize.sixty}
+						buttonLink="#"
+					/>
+				</div>
+			)}
 			<div className="grid md:grid-cols-2 gap-4 pb-8 pt-20 px-10 sm:px-32 md:px-20 place-items-center bg-primary-purple text-body-white">
 				<div className="w-full h-full">
 					<span className="text-fs-32 text-white">Pngme</span>
