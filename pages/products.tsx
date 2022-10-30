@@ -1,10 +1,13 @@
 import type { NextPage } from 'next'
+import ProductsHeader from '../components/products/header'
+import ProductsList from '../components/products/list'
 
 const Products: NextPage = () => {
   return (
-    <div>
-      <h1>Products</h1>
-    </div>
+    <>
+      <ProductsHeader />
+      <ProductsList />
+    </>
   )
 }
 

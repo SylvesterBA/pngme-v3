@@ -44,6 +44,7 @@ module.exports = {
 				"fs-12": "12px",
 			},
 			screens: {
+				"xs": "480px",
 				"3xl": '2000px',
 			},
 			width: {
