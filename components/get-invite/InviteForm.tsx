@@ -6,6 +6,7 @@ import { getCountries } from 'react-phone-number-input/input'
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useState } from 'react';
 
+import { useModal } from '../../hooks/useModal/useModal';
 import styles from '../../styles/pages/GetInvite.module.css'
 
 type InviteFormInputs = {
@@ -18,11 +19,25 @@ type InviteFormInputs = {
   additionalInformation: string,
 }
 
+
 export const InviteForm = () => {
   const [value, setValue] = useState()
+  const { setVisible, setTitle, setDescription } = useModal()
+
   const { control, register, handleSubmit, watch, formState: { errors } } = useForm<InviteFormInputs>();
 
-  const onSubmit: SubmitHandler<InviteFormInputs> = data => console.log(data);
+  const _modalDescription = (
+    <p className="font-thin text-gray-500">
+      A member of our team will reach out to you to follow up. Please check your email for an invitation to our pre-qualification form to your <b>email.</b> 
+    </p>   
+  )
+  
+  const onSubmit: SubmitHandler<InviteFormInputs> = data => {
+    console.log(data)
+    setTitle("Thank you!")
+    setDescription(_modalDescription)
+    setVisible(true)
+  };
 
   console.log(watch("firstName")) // watch input value by passing the name of it
 
@@ -55,7 +70,7 @@ export const InviteForm = () => {
           <input
             id="companyName"
             className="border-b-2 pl-4 md:border-2 md:py-3 md:rounded md:text-sm"
-            {...register("companyName", { required: true })}
+            {...register("companyName")}
           />
         </div>
 
@@ -86,8 +101,8 @@ export const InviteForm = () => {
           {errors.email && <span className="text-sm lg:text-lg text-red-600 pl-4">Email adress is required</span>}
         </div>
 
-        <div className="flex md:hidden flex-col h-14 border-b-2 pl-3 mb-2"> {/* pt-3 pb-5 mb-2 border-b-2 lg:ml-4 */}
-          <select defaultValue="Country" className="h-full text-sm" placeholder='Country'> {/* px-4 pb-2 md:px-0 text-sm lg:text-base */}
+        <div className="flex md:hidden flex-col h-14 border-b-2 pl-3 mb-2">
+          <select defaultValue="Country" className="h-full text-sm" placeholder='Country'>
             <option value="Country" disabled hidden>Country</option>
 
             {getCountries().map(country => (
