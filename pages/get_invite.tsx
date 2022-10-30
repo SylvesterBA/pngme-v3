@@ -1,9 +1,25 @@
+import Image from 'next/image';
 import type { NextPage } from 'next'
+
+import { useModal } from '../hooks/useModal/useModal';
 import styles from '../styles/pages/GetInvite.module.css'
 import { InviteForm } from '../components/get-invite/InviteForm';
-import Image from 'next/image';
+import { useEffect } from 'react';
 
 const GetInvite: NextPage = () => {
+  const { setVisible, setTitle, setDescription } = useModal()
+  const _modalDescription = (
+    <p className="font-thin text-gray-500">
+      A member of our team will reach out to you to follow up. Please check your email for an invitation to our pre-qualification form to your <b>email.</b> 
+    </p>   
+  )
+
+  useEffect(() => {
+    setTitle("Thank you!")
+    setDescription(_modalDescription)
+    setVisible(true)
+  }, [])
+
   return (
     <div className={`flex flex-col relative ${styles.image_wrapper} lg:flex-row`}>
       <Image
