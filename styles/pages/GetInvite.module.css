@@ -4,6 +4,14 @@
   bottom: 0 !important;
 }
 
+.phoneNumber {
+  @apply border-b-2 pl-5 py-2 md:border-2 md:p-3;
+}
+
+.phoneNumber > div > div {
+  @apply mr-3
+}
+
 @media (min-width: 1024px) {
 }
 

@@ -3,8 +3,10 @@ import PhoneInput from 'react-phone-number-input'
 import { default as countryLabels } from 'react-phone-number-input/locale/en'
 import { getCountries } from 'react-phone-number-input/input'
 
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useState } from 'react';
+
+import styles from '../../styles/pages/GetInvite.module.css'
 
 type InviteFormInputs = {
   firstName: string,
@@ -13,13 +15,12 @@ type InviteFormInputs = {
   phoneNumber: number,
   email: string,
   country: string,
-  business: string,
-  businessDescription: string,
+  additionalInformation: string,
 }
 
 export const InviteForm = () => {
   const [value, setValue] = useState()
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<InviteFormInputs>();
+  const { control, register, handleSubmit, watch, formState: { errors } } = useForm<InviteFormInputs>();
 
   const onSubmit: SubmitHandler<InviteFormInputs> = data => console.log(data);
 
@@ -27,69 +28,66 @@ export const InviteForm = () => {
 
   return (
     <>
-      <span className="block font-pngme-helvetica text-2xl px-4 pb-6 pt-10 lg:pt-20">Fill out the form</span>
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-white boxshadow-2 p-4 pt-6 z-10 rounded-lg lg:px-10">
+      <span className="block font-pngme-helvetica text-2xl px-4 pb-6 pt-10 md:pt-20">Fill out the form</span>
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-white boxshadow-2 p-4 pt-6 z-10 rounded-lg lg:px-6">
         <div className="flex flex-col py-2">
-          <label htmlFor="firstName" className="flex px-4">First name<span className="hidden lg:block">*</span></label>
+          <label htmlFor="firstName" className="flex px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base md:bolder">First name*</label>
           <input
             id="firstName"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
+            className="border-b-2 pl-4 md:border-2 md:py-3 md:rounded md:text-sm"
             {...register("firstName", { required: true })}
           />
-          {errors.firstName && <span>First name is required</span>}
+          {errors.firstName && <span className="text-sm lg:text-lg text-red-600 pl-4">First name is required</span>}
         </div>
 
         <div className="flex flex-col py-2">
-          <label htmlFor="lastName" className="flex px-4">Last name<span className="hidden lg:block">*</span></label>
+          <label htmlFor="lastName" className="flex px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base">Last name*</label>
           <input
             id="lastName"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
+            className="border-b-2 pl-4 md:border-2 md:py-3 md:rounded md:text-sm"
             {...register("lastName", { required: true })}
           />
-          {errors.lastName && <span>Last name is required</span>}
+          {errors.lastName && <span className="text-sm lg:text-lg text-red-600 pl-4">Last name is required</span>}
         </div>
 
         <div className="flex flex-col py-2">
-          <label htmlFor="companyName" className="px-4">Company name</label>
+          <label htmlFor="companyName" className="px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base">Company</label>
           <input
             id="companyName"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
+            className="border-b-2 pl-4 md:border-2 md:py-3 md:rounded md:text-sm"
             {...register("companyName", { required: true })}
           />
-          {errors.companyName && <span>Company name is required</span>}
         </div>
 
         <div className="flex flex-col py-2">
-          <label htmlFor="phoneNumber" className="flex px-4">Phone number<span className="hidden lg:block">*</span></label>
-          {/* <PhoneInput
-            defaultCountry="US"
-            placeholder=""
-            value={value}
-            onChange={setValue}
-            // {...register("phoneNumber", { required: true })}
-          /> */}
-
-          <input
-            id="phoneNumber"
-            type="number"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
-            {...register("phoneNumber", { required: true })}
+          <label htmlFor="phoneNumber" className="flex px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base">Phone number*</label>
+          <Controller
+            name="phoneNumber"
+            control={control}
+            render={({ field }) => <PhoneInput
+              {...field}
+              defaultCountry="US"
+              placeholder="Phone number"
+              value={value}
+              className={styles.phoneNumber}
+            />}
           />
-          {errors.phoneNumber && <span>Phone number is required</span>}
+
+          {errors.phoneNumber && <span className="text-sm lg:text-lg text-red-600 pl-4">Phone number is required</span>}
         </div>
 
         <div className="flex flex-col py-2">
-          <label htmlFor="email" className="flex px-4">Email adress<span className="hidden lg:block">*</span></label>
+          <label htmlFor="email" className="flex px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base">Email adress*</label>
           <input
             id="email"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
-            {...register("email", { required: true })}
+            className={`border-b-2 pl-4 md:border-2 md:py-3 md:rounded md:text-sm`}
+            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
-          {errors.email && <span>Email adress is required</span>}
+          {errors.email && <span className="text-sm lg:text-lg text-red-600 pl-4">Email adress is required</span>}
         </div>
 
-        <div className="flex lg:hidden flex-col pt-3 pb-5 mb-2 border-b-2 lg:ml-4">
-          <select defaultValue="Country" className="px-4" placeholder='Country'>
+        <div className="flex md:hidden flex-col h-14 border-b-2 pl-3 mb-2"> {/* pt-3 pb-5 mb-2 border-b-2 lg:ml-4 */}
+          <select defaultValue="Country" className="h-full text-sm" placeholder='Country'> {/* px-4 pb-2 md:px-0 text-sm lg:text-base */}
             <option value="Country" disabled hidden>Country</option>
 
             {getCountries().map(country => (
@@ -99,12 +97,12 @@ export const InviteForm = () => {
             ))}
           </select>
 
-          {errors.country && <span>Country is required</span>}
+          {errors.country && <span className="text-sm lg:text-lg text-red-600 pl-4">Country is required</span>}
         </div>
 
-        <div className="hidden lg:flex flex-col py-2">
-          <label htmlFor="country" className="px-4">Country</label>
-          <select defaultValue="select" className="px-0 ml-4 border-2 py-3 rounded-lg pl-4 text-gray-500" placeholder='select'>
+        <div className="hidden md:flex flex-col py-2">
+          <label htmlFor="country" className="flex px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base">Country*</label>
+          <select defaultValue="select" className="px-0 ml-4 border-2 py-3 rounded pl-4 text-gray-500 md:ml-0" placeholder='select'>
             <option value="select" disabled hidden>
               Please select
             </option>
@@ -115,35 +113,17 @@ export const InviteForm = () => {
               </option>
             ))}
           </select>
-          
-          {/* <input
-            id="country"
-            className="border-b-2 pl-4"
-            {...register("country", { required: true })}
-          /> */}
-          {errors.country && <span>Country is required</span>}
+          {errors.country && <span className="text-sm lg:text-lg text-red-600 pl-4">Country is required</span>}
         </div>
 
         <div className="flex flex-col py-2">
-          <label htmlFor="business" className="px-4">What business are you?</label>
-          <input
+          <label htmlFor="business" className="px-4 text-black md:font-bold pb-2 md:px-0 text-sm lg:text-base">Please provide any additonal information on your data needs</label>
+          <textarea
             id="business"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
-            {...register("business", { required: true })}
+            className="border-b-2 pl-4 md:border-2 md:py-3 md:rounded md:text-sm"
+            {...register("additionalInformation")}
           />
-          {errors.business && <span>Business is required</span>}
         </div>
-
-        <div className="flex flex-col py-2">
-          <label htmlFor="businessDescription" className="px-4">Please describe your business and what the debt facility will be used for?</label>
-          <input
-            id="businessDescription"
-            className="border-b-2 pl-4 lg:border-2 lg:py-2 lg:ml-4 lg:rounded-lg"
-            {...register("businessDescription", { required: true })}
-          />
-          {errors.businessDescription && <span>Business description is required</span>}
-        </div>
-
 
         <button type="submit" className="bg-primary-pink text-white py-3 px-10 mt-8 mb-6 boxshadow rounded-full w-full text-lg">Submit</button>
 
