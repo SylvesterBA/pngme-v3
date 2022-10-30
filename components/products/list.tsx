@@ -6,7 +6,7 @@ const ProductsList = () => {
 
   return (
     <>
-      <div className="px-3 pb-4">
+      <div className="px-3 pb-4 md:hidden">
         <label htmlFor="products" className="uppercase text-xs"><b>Products</b></label>
         <select id="products" className="border border-gray-300 bg-secondary-beige mt-2 py-4 pl-4 text-sm rounded-lg block w-full text-gray-500" onChange={({ target: { value }}) => setSelected(value === 'Select' ? "ECR" : value)}>
           <option value="Select" selected>Select from the list</option>
@@ -20,7 +20,6 @@ const ProductsList = () => {
       </div>
 
       <ProductDetails selected={selected} />
-
     </>
   )
 }

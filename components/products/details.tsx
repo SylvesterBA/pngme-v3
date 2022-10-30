@@ -20,10 +20,10 @@ const ProductDetails = ({ selected }: { selected: string }) => {
       setProduct(_product)
     }
   }, [selected])
-  
+
   return (
-    <div className="">
-      <Image src="/images/products/mobile-ecr.svg" alt="ECR" width={400} height={400} layout="responsive" />
+    <div className="md:hidden">
+      <Image src="/images/products/mobile-ecr.svg" alt="ECR" width={200} height={200} layout="responsive" />
       <div className="px-5 flex flex-col">
         <p className="font-pngme-helvetica text-2xl pb-3">{product.title}</p>
         <p className="font-thin pb-8">{product.description}</p>
