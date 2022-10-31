@@ -1,6 +1,6 @@
 .modal {
   @apply flex w-full bg-black absolute top-0 opacity-50 z-40;
-  height: 1000%;
+  height: 100%;
 }
 
 .flipHorizontally {

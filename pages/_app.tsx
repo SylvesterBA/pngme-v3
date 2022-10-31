@@ -6,12 +6,13 @@ import { Modal } from "../components/modal";
 
 function App({ Component, pageProps }: AppProps) {
 	return (
-		<Layout>
+		<>
 			<ModalContextController>
-				<Component {...pageProps}/>
-				<Modal />
+				<Layout>
+					<Component {...pageProps}/>
+				</Layout>
 			</ModalContextController>
-		</Layout>
+		</>
 	);
 }
 

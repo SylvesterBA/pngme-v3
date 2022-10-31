@@ -67,36 +67,56 @@ const ProductsList = () => {
         </ul>
       </div>
 
-      <div className="hidden lg:flex">
-        <ul className="flex flex-col">
-          <li className="uppercase border bg-primary-yellow rounded-full px-6 py-2 flex items-center">
-            <Image src="/icons/products/ecr.svg" alt="Enhanced Credit Report" width={40} height={40} />
-            <span className="px-4"><b>Enhanced Credit Report</b></span>
-          </li>
-          <li className="uppercase rounded-full px-6 py-2 flex items-center">
-            <Image src="/icons/products/cba.svg" alt="Credit Bureau API" width={40} height={40} />
-            <span className="px-4"><b>Credit Bureau API</b></span>
-          </li>
-          <li className="uppercase rounded-full px-6 py-2 flex items-center">
-            <Image src="/icons/products/b&t.svg" alt="Balance & Transactions" width={40} height={40} />
-            <span className="px-4"><b>Balance & Transactions</b></span>
-          </li>
-          <li className="uppercase rounded-full px-6 py-2 flex items-center">
-            <Image src="/icons/products/fl.svg" alt="Feature Library" width={40} height={40} />
-            <span className="px-4"><b>Feature Library</b></span>
-          </li>
-          <li className="uppercase rounded-full px-6 py-2 flex items-center">
-            <Image src="/icons/products/dd.svg" alt="Data dashboard" width={40} height={40} />
-            <span className="px-4"><b>Data dashboard</b></span>
-          </li>
-          <li className="uppercase rounded-full px-6 py-2 flex items-center">
-            <Image src="/icons/products/fdm.svg" alt="Financial Data Modelling" width={40} height={40} />
-            <span className="px-4"><b>Financial Data Modelling</b></span>
-          </li>
-        </ul>
-      </div>
+      <div className="lg:flex lg:px-12 max-w-7xl mx-auto">
+        <div className="hidden lg:flex">
+          <ul className="flex flex-col lg:pt-12">
+            <li
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'ECR' ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected("ECR")}
+            >
+              <Image src="/icons/products/ecr.svg" alt="Enhanced Credit Report" width={40} height={40} />
+              <span className="px-4"><b>Enhanced Credit Report</b></span>
+            </li>
+            <li
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'CBA' ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected("CBA")}
+            >
+              <Image src="/icons/products/cba.svg" alt="Credit Bureau API" width={40} height={40} />
+              <span className="px-4"><b>Credit Bureau API</b></span>
+            </li>
+            <li
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'B&T' ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected("B&T")}
+            >
+              <Image src="/icons/products/b&t.svg" alt="Balance & Transactions" width={40} height={40} />
+              <span className="px-4"><b>Balance & Transactions</b></span>
+            </li>
+            <li
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'FL' ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected("FL")}
+            >
+              <Image src="/icons/products/fl.svg" alt="Feature Library" width={40} height={40} />
+              <span className="px-4"><b>Feature Library</b></span>
+            </li>
+            <li
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'DD' ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected("DD")}
+            >
+              <Image src="/icons/products/dd.svg" alt="Data dashboard" width={40} height={40} />
+              <span className="px-4"><b>Data dashboard</b></span>
+            </li>
+            <li
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'FDM' ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected("FDM")}
+            >
+              <Image src="/icons/products/fdm.svg" alt="Financial Data Modelling" width={40} height={40} />
+              <span className="px-4"><b>Financial Data Modelling</b></span>
+            </li>
+          </ul>
+        </div>
 
-      <ProductDetails selected={selected} />
+        <ProductDetails selected={selected} />
+      </div>
     </>
   )
 }

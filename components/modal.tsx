@@ -10,7 +10,7 @@ export const Modal = () => {
     <>
       <div className={`${visible ? styles.modal : "hidden"}`} onClick={() => setVisible(false)} />
       <div
-        className={`${visible ? "flex" : "hidden"} absolute top-1/4 left-0 right-0 mx-auto z-40 bg-white w-11/12 sm:w-2xl rounded-lg`}
+        className={`${visible ? "flex" : "hidden"} absolute top-1/5 left-0 right-0 mx-auto z-40 bg-white w-11/12 sm:w-2xl rounded-lg`}
         onClick={() => console.log(1)}
       >
         <div className='hidden sm:flex absolute z-40 -right-3 -top-6'>

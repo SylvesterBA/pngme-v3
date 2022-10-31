@@ -68,7 +68,7 @@ const ProductDetails = ({ selected }: { selected: string }) => {
         <div className="px-5 flex flex-col z-20 mt-10">
           <p className="font-pngme-helvetica text-2xl pb-3">{product.title}</p>
           <p className="font-thin pb-8">{product.description}</p>
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:justify-start">
             <Button type='primary' label="Request information" additionalStyles="py-4 px-6 mr-2" />
             <Button type='outlined' label="Start exploring" additionalStyles="py-4 px-6 ml-2" />
           </div>
