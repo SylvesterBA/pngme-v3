@@ -1,11 +1,6 @@
 import type { NextPage } from 'next'
+import _Products from '../components/products/products'
 
-const Products: NextPage = () => {
-  return (
-    <div>
-      <h1>Products</h1>
-    </div>
-  )
-}
+const Products: NextPage = () => <_Products />
 
 export default Products

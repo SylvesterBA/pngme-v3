@@ -44,7 +44,26 @@ module.exports = {
 				"fs-12": "12px",
 			},
 			screens: {
+				"xs": "480px",
 				"3xl": '2000px',
+			},
+			width: {
+				"lg": '28rem',
+				"xl": '32rem',
+				"2xl": '36rem',
+				"3xl": '40rem',
+				"4xl": '44rem',
+				"5xl": '48rem',
+				"6xl": '52rem',
+			},
+			minWidth: {
+				'lg': '28rem',
+			},
+			zIndex: {
+				'60': '60',
+			},
+			inset: {
+				'1/5': '20%',
 			}
 		},
 	},

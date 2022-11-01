@@ -68,7 +68,7 @@ const Navbar = ({
 			</div>
 
 			{showMobileNavbar && (
-				<div className="absolute bg-white left-2 right-2 top-32 justify-center align-middle pt-5 pb-10 boxshadow z-10">
+				<div className="absolute bg-white left-2 right-2 top-32 justify-center align-middle pt-5 pb-10 boxshadow z-40">
 					<NavBarLinks
 						containerStyles="flex flex-col h-full items-center text-fs-22"
 						elementStyles="py-4"
