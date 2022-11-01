@@ -1,0 +1,5 @@
+.select_div {
+  @apply border border-gray-300 bg-secondary-beige mt-2 rounded w-full text-gray-500 pr-8;
+  border-right: 1px solid transparent;
+  outline: 1px solid gray;
+}
