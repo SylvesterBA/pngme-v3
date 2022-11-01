@@ -1,14 +1,6 @@
 import type { NextPage } from 'next'
-import ProductsHeader from '../components/products/header'
-import ProductsList from '../components/products/list'
+import _Products from '../components/products/products'
 
-const Products: NextPage = () => {
-  return (
-    <>
-      <ProductsHeader />
-      <ProductsList />
-    </>
-  )
-}
+const Products: NextPage = () => <_Products />
 
 export default Products

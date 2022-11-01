@@ -1,121 +1,121 @@
 import Image from "next/image"
-import React, { useEffect } from "react"
-import ProductDetails from "./details"
+import React, { useEffect, useState } from "react"
 
-const ProductsList = () => {
-  const [selected, setSelected] = React.useState<string>("ECR")
+import ProductDetails from "./details"
+import styles from "/styles/components/ProductList.module.css"
+
+const ProductsList = (props) => {
+  const data = [
+    {
+      key: 'ECR',
+      title: 'Enhanced Credit Report',
+      description: `Call a single API endpoint to get a consolidated credit report using Pngme's enhanced data. The alternative credit report can be used alongside Pngme's credit bureau API to view unreported lending data and increase coverage of thin-file customers.`
+    },
+    {
+      key: 'CBA',
+      title: 'Credit Bureau API',
+      description: `Use a single Pngme API call to access consumer credit reports and credit scores in Nigeria and Kenya.`
+    },
+    { 
+      key: 'B&T',
+      title: 'Balance & Transactions',
+      description: `View customer balance and transactional data across connected accounts. Make lending decisions quickly with a comprehensive view of your customer's financial health.`
+    },
+    {
+      key: 'FL',
+      title: 'Feature Library',
+      description: `Easy to use code snippets that empower developers to extract insights quickly. Access over 20 features including DTI, opened loans, betting and gambling.`
+    },
+    {
+      key: 'DD',
+      title: 'Data Dashboard',
+      description: `A holistic view of your customer's  financial data in a single dashboard. Developers can quickly and easily access sandbox data and start building with API and SDK keys.`
+    },
+    {
+      key: 'FDM',
+      title: 'Financial Data Modelling',
+      description: "Process and analyze customer data with Pngme's machine learning models. Simply provide raw data and Pngme's data team will provide actionable insights without the need for SDK integration."
+    },
+  ]
+
+  const [selected, setSelected] = useState<any>(data[0])
+  const [firstRender, setFirstRender] = useState<boolean>(true)
+
+  const _showSelected = () => firstRender ? (
+    <span className="text-primary-purple pl-8 flex items-center cursor-default">Select from the list </span>
+  ) : (
+    <div className="uppercase flex items-center pl-4 cursor-default">
+      <Image src={`/icons/products/${selected.key.toLowerCase()}.svg`} alt={selected.title} width={60} height={60} />
+      <span className="px-4 text-primary-purple pt-1"><b>{selected.title}</b></span>
+    </div>
+  )
 
   return (
     <>
-      <div className="px-3 pb-4 md:hidden">
+      <div className="px-5 pb-4 md:hidden relative w-full">
         <label htmlFor="products" className="uppercase text-xs"><b>Products</b></label>
-        <select id="products" className="border border-gray-300 bg-secondary-beige mt-2 py-4 pl-4 text-sm rounded-lg block w-full text-gray-500" onChange={({ target: { value }}) => setSelected(value === 'Select' ? "ECR" : value)}>
-          <option value="Select" selected>Select from the list</option>
-          <option value="ECR">Enhanced Credit Report</option>
-          <option value="CBA">Credit Bureau API</option>
-          <option value="B&T">Balance & Transactions</option>
-          <option value="FL">Feature Library</option>
-          <option value="DD">Data Dashboard</option>
-          <option value="FDM">Financial Data Modelling</option>
-        </select>
+        <div
+          className={styles.select_div}
+          onClick={() => props.setShowModal(!props.showModal)}
+        >
+          <div className="flex justify-between h-16">
+            {_showSelected()}
+            <Image src="/icons/arrow.svg" alt="arrow-down" width={20} height={20} className="self-end"/>
+          </div>
+        </div>
+
+        {props.showModal && (
+          <ul className="flex flex-col bg-white absolute boxshadow z-20 top-28 rounded-lg py-5 left-5 right-5 px-8 cursor-default">
+            {data.map(el => (
+              <li
+                key={el.key}
+                className={`uppercase justify-start rounded-full px-6 py-2 my-1 flex items-center ${selected?.key === el.key && !firstRender ? "border bg-primary-yellow" : "border border-transparent"}`}
+                onClick={() => {
+                  setSelected(el)
+                  setFirstRender(false)
+                  props.setShowModal(false)
+                }}
+              >
+                <Image src={`/icons/products/${el.key.toLowerCase()}.svg`} alt={el.title} width={40} height={40} />
+                <span className="px-4"><b>{el.title}</b></span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <div className="hidden md:block lg:hidden pb-4">
         <ul className="grid grid-cols-2 px-24">
-          <li
-            className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'ECR' ? "border bg-primary-yellow" : "border border-transparent"}`}
-            onClick={() => setSelected("ECR")}
-          >
-            <Image src="/icons/products/ecr.svg" alt="Enhanced Credit Report" width={40} height={40} />
-            <span className="px-4"><b>Enhanced Credit Report</b></span>
-          </li>
-          <li
-            className={`uppercase rounded-full px-6 py-2 my-1 flex items-center justify-end ${selected === 'CBA' ? "border bg-primary-yellow" : "border border-transparent"}`}
-            onClick={() => setSelected("CBA")}          
-          >
-            <Image src="/icons/products/cba.svg" alt="Credit Bureau API" width={40} height={40} />
-            <span className="px-4"><b>Credit Bureau API</b></span>
-          </li>
-          <li
-            className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'B&T' ? "border bg-primary-yellow" : "border border-transparent"}`}
-            onClick={() => setSelected("B&T")}          
-          >
-            <Image src="/icons/products/b&t.svg" alt="Balance & Transactions" width={40} height={40} />
-            <span className="px-4"><b>Balance & Transactions</b></span>
-          </li>
-          <li
-            className={`uppercase rounded-full px-6 py-2 my-1 flex items-center justify-end ${selected === 'FL' ? "border bg-primary-yellow" : "border border-transparent"}`}
-            onClick={() => setSelected("FL")}          
-          >
-            <Image src="/icons/products/fl.svg" alt="Feature Library" width={40} height={40} />
-            <span className="px-4"><b>Feature Library</b></span>
-          </li>
-          <li
-            className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'DD' ? "border bg-primary-yellow" : "border border-transparent"}`}
-            onClick={() => setSelected("DD")}          
-          >
-            <Image src="/icons/products/dd.svg" alt="Data dashboard" width={40} height={40} />
-            <span className="px-4"><b>Data dashboard</b></span>
-          </li>
-          <li
-            className={`uppercase rounded-full px-6 py-2 my-1 flex items-center justify-end ${selected === 'FDM' ? "border bg-primary-yellow" : "border border-transparent"}`}
-            onClick={() => setSelected("FDM")}          
-          >
-            <Image src="/icons/products/fdm.svg" alt="Financial Data Modelling" width={40} height={40} />
-            <span className="px-4"><b>Financial Data Modelling</b></span>
-          </li>
+          {data.map((el, i) => (
+            <li
+              key={el.key}
+              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${i + 1 % 2 === 0 ? "justify-end" : ""}${selected?.key === el.key ? "border bg-primary-yellow" : "border border-transparent"}`}
+              onClick={() => setSelected(el)}
+            >
+              <Image src={`/icons/products/${el.key.toLowerCase()}.svg`} alt={el.title} width={40} height={40} />
+              <span className="px-4"><b>{el.title}</b></span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div className="lg:flex lg:px-12 max-w-7xl mx-auto">
         <div className="hidden lg:flex">
           <ul className="flex flex-col lg:pt-12">
-            <li
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'ECR' ? "border bg-primary-yellow" : "border border-transparent"}`}
-              onClick={() => setSelected("ECR")}
-            >
-              <Image src="/icons/products/ecr.svg" alt="Enhanced Credit Report" width={40} height={40} />
-              <span className="px-4"><b>Enhanced Credit Report</b></span>
-            </li>
-            <li
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'CBA' ? "border bg-primary-yellow" : "border border-transparent"}`}
-              onClick={() => setSelected("CBA")}
-            >
-              <Image src="/icons/products/cba.svg" alt="Credit Bureau API" width={40} height={40} />
-              <span className="px-4"><b>Credit Bureau API</b></span>
-            </li>
-            <li
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'B&T' ? "border bg-primary-yellow" : "border border-transparent"}`}
-              onClick={() => setSelected("B&T")}
-            >
-              <Image src="/icons/products/b&t.svg" alt="Balance & Transactions" width={40} height={40} />
-              <span className="px-4"><b>Balance & Transactions</b></span>
-            </li>
-            <li
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'FL' ? "border bg-primary-yellow" : "border border-transparent"}`}
-              onClick={() => setSelected("FL")}
-            >
-              <Image src="/icons/products/fl.svg" alt="Feature Library" width={40} height={40} />
-              <span className="px-4"><b>Feature Library</b></span>
-            </li>
-            <li
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'DD' ? "border bg-primary-yellow" : "border border-transparent"}`}
-              onClick={() => setSelected("DD")}
-            >
-              <Image src="/icons/products/dd.svg" alt="Data dashboard" width={40} height={40} />
-              <span className="px-4"><b>Data dashboard</b></span>
-            </li>
-            <li
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected === 'FDM' ? "border bg-primary-yellow" : "border border-transparent"}`}
-              onClick={() => setSelected("FDM")}
-            >
-              <Image src="/icons/products/fdm.svg" alt="Financial Data Modelling" width={40} height={40} />
-              <span className="px-4"><b>Financial Data Modelling</b></span>
-            </li>
+            {data.map((el, i) => (
+              <li
+                key={el.key}
+                className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected?.key === el.key ? "border bg-primary-yellow" : "border border-transparent"}`}
+                onClick={() => setSelected(el)}
+              >
+                <Image src={`/icons/products/${el.key.toLowerCase()}.svg`} alt={el.title} width={40} height={40} />
+                <span className="px-4"><b>{el.title}</b></span>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <ProductDetails selected={selected} />
+        <ProductDetails selected={selected} setShowModal={props.setShowModal} products={data} />
       </div>
     </>
   )
