@@ -21,6 +21,7 @@ module.exports = {
 				"body-gray-light": "#0000004D",
 				"body-white": "#D1D5DB",
 				"dirty-white": "#F8F6F3",
+				"dark-yellow": "#FFE091",
 			},
 			fontFamily: {
 				"pngme-helvetica": [
@@ -64,7 +65,12 @@ module.exports = {
 			},
 			inset: {
 				'1/5': '20%',
+			},
+			spacing: {
+				'88': '22rem',
+				'10!': '2.5rem !important'
 			}
+			
 		},
 	},
 	plugins: [],

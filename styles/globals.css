@@ -28,6 +28,16 @@ html, body {
   width: fit-content;
 }
 
+.flipHorizontally {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flipVertically {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
 .switchButtonContent {
   width: 275px;
   display: flex;
