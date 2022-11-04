@@ -38,6 +38,14 @@ html, body {
   transform: scaleY(-1);
 }
 
+.child-z-50 > * {
+  z-index: 50;
+}
+
+.child-block > * {
+  display: block !important;
+}
+
 .switchButtonContent {
   width: 275px;
   display: flex;

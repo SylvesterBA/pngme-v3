@@ -8,3 +8,16 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/fl-features',
+        destination: 'https://github.com/pngme/pngme-feature-library',
+        permanent: true,
+        basePath: false,
+      }
+    ]
+  }
+}
