@@ -3,7 +3,6 @@ import type { NextPage } from 'next'
 
 import styles from '../styles/pages/GetInvite.module.css'
 import { InviteForm } from '../components/get-invite/InviteForm';
-import { useEffect } from 'react';
 
 const GetInvite: NextPage = () => (
   <div className={`flex flex-col relative ${styles.image_wrapper} lg:flex-row`}>

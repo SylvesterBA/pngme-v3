@@ -19,9 +19,11 @@ module.exports = {
 				"body-gray-dark": "#00000099",
 				"body-gray": "#00000066",
 				"body-gray-light": "#0000004D",
+				"body-black-light": "#0C0C0CCC",
 				"body-white": "#D1D5DB",
 				"dirty-white": "#F8F6F3",
 				"dark-yellow": "#FFE091",
+				"white": "#FFFFFF"
 			},
 			fontFamily: {
 				"pngme-helvetica": [
@@ -34,11 +36,13 @@ module.exports = {
 			fontSize: {
 				"fs-60": "60px",
 				"fs-44": "44px",
+				"fs-40": "40px",
 				"fs-36": "36px",
 				"fs-32": "32px",
 				"fs-28": "28px",
 				"fs-26": "26px",
 				"fs-22": "22px",
+				"fs-20": "20px",
 				"fs-18": "18px",
 				"fs-16": "16px",
 				"fs-14": "14px",

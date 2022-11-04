@@ -14,7 +14,7 @@ enum ENavbarPageLinks {
 	about = "About",
 	careers = "Careers",
 	pricing = "Pricing",
-	developers = "Developers",
+	// developers = "Developers",
 	blog = "Blog",
 }
 
@@ -55,20 +55,20 @@ const Navbar = ({
 				</div>
 			</Link>
 
-			<NavBarLinks containerStyles="hidden md:flex" elementStyles="xl:text-xl font-normal xl:px-4"/>
+			<NavBarLinks containerStyles="hidden lg:flex" elementStyles="xl:text-xl font-normal xl:px-4"/>
 
-			<div className="hidden md:flex text-right">
+			<div className="hidden lg:flex text-right">
 				<Link href="https://admin.pngme.com">
 					<Button type='secondary' label={buttonLabel || "Login"} additionalStyles="px-9 py-3 xl:px-20 xl:py-4" />
 				</Link>
 			</div>
 
-			<div className="md:hidden px-5 flex py-2" onClick={() => setShowMobileNavbar(!showMobileNavbar)}>
+			<div className="lg:hidden px-5 flex py-2" onClick={() => setShowMobileNavbar(!showMobileNavbar)}>
 				<Image src="/icons/burger-menu.svg" alt="burgerMenu" width={30} height={30} />
 			</div>
 
 			{showMobileNavbar && (
-				<div className="absolute bg-white left-2 right-2 top-32 justify-center align-middle pt-5 pb-10 boxshadow z-40">
+				<div className="absolute bg-white left-2 right-2 top-32 justify-center align-middle pt-5 pb-10 boxshadow z-10 z-40">
 					<NavBarLinks
 						containerStyles="flex flex-col h-full items-center text-fs-22"
 						elementStyles="py-4"

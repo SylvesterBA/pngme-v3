@@ -27,7 +27,7 @@ const Careers: NextPage = () => (
 
     <div className='flex flex-col px-4 py-6 max-w-7xl mx-auto md:px-24 2xl:px-0 md:pb-16'>
       <Button type="secondary" label="See more" additionalStyles="w-48 md:w-56 py-4" />
-      <span className="py-8 text-xl md:hidden">Can't find your position?
+      <span className="py-8 text-xl md:hidden">Can&apos;t find your position?
         <span className="text-primary-pink"> Message Us </span>
       </span>
     </div>

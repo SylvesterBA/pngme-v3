@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import ProductDetails from "./details"
 import styles from "/styles/components/ProductList.module.css"
 
-const ProductsList = (props) => {
+const ProductsList = (props: any) => {
   const data = [
     {
       key: 'ECR',

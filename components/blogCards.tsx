@@ -69,7 +69,7 @@ const BlogCards = () => {
   const filterTitles = (e: ChangeEvent<HTMLInputElement>) => {
 
     const search = e.target.value.toLowerCase()
-    const filteredNames = getBlog.filter(titleSearch => titleSearch.title.toLowerCase().includes(search))
+    const filteredNames = getBlog.filter((titleSearch: any) => titleSearch.title.toLowerCase().includes(search))
     setTitleSearch(filteredNames)
   }
 

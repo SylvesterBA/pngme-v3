@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const Header = ({ content }: HeaderProps) => (
 	<header className="m-14">
-		<div className="grid sm:grid-cols-1 md:grid-cols-12 gap-8 text-left flex items-center mb-2">
+		<div className="grid md:grid-cols-1 lg:grid-cols-12 gap-8 text-left flex items-center mb-2">
 			<div className="text-fs-60 font-pngme-helvetica col-span-7">
 				{`${content.fields.heading}`}
 			</div>

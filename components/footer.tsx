@@ -109,7 +109,7 @@ const Footer = ({ ...props }: FooterProps) => {
 							<Link href={"/terms-of-service"}>Terms of Service</Link> |{" "}
 						</span>
 						<span className="cursor-pointer">
-							<Link href={"/privacy"}>Privacy Policy</Link> |{" "}
+							<Link href={"/privacy-policy"}>Privacy Policy</Link> |{" "}
 						</span>
 						<span className="cursor-pointer">
 							<Link href={"/eula"}>End User License Agreement</Link>

@@ -11,7 +11,7 @@ const CareersOpenPositions = () => (
       </div>
 
       <div className='hidden md:flex items-center'>
-        <span className="text-xl">Can't find your position?
+        <span className="text-xl">Can&apos;t find your position?
           <span className="text-primary-pink"> Message Us </span>
         </span>
       </div>

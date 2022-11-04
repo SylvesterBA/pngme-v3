@@ -24,20 +24,6 @@ html, body {
   box-shadow: 0 0px 20px rgba(0,0,0,.15);
 }
 
-.w-fit {
-  width: fit-content;
-}
-
-.flipHorizontally {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-.flipVertically {
-  -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
-}
-
 .switchButtonContent {
   width: 275px;
   display: flex;
@@ -89,4 +75,20 @@ html, body {
 }
 [type="checkbox"]:checked + .switchButtonContainer .light{
   color: #300038;
+}
+
+@media screen and (max-width: 639px) {
+  .hide-to-sm { display: none; }
+}
+@media screen and (max-width: 767px) {
+  .hide-to-md { display: none; }
+}
+@media screen and (max-width: 1023px) {
+  .hide-to-lg { display: none; }
+}
+@media screen and (max-width: 1279px) {
+  .hide-to-xl { display: none; }
+}
+@media screen and (max-width: 1535px) {
+  .hide-to-2xl { display: none; }
 }
