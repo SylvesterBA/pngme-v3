@@ -15,6 +15,11 @@ const ProductDetails = ({ selected, setShowModal, products }: { selected: any, s
     router.push("/fl-features")
   }
 
+  const navigateButton = e => {
+    e.preventDefault()
+    router.push(selected.key)
+  }
+
   return (
     <>
       <div className="md:hidden" onClick={() => setShowModal(false)}>
@@ -23,8 +28,8 @@ const ProductDetails = ({ selected, setShowModal, products }: { selected: any, s
           <p className="font-pngme-helvetica text-2xl pb-3">{selected?.title || defaultProduct.title}</p>
           <p className="font-thin pb-8">{selected?.description || defaultProduct.description}</p>
           <div className="flex flex-col xs:flex-row xs:pb-5 xs:justify-evenly">
-            <Button type='secondary' label="Lorem ipsum" additionalStyles="px-4 py-4 mb-5 xs:mb-0 xs:px-10" />
-            <Button type='outlined' label="Start exploring" additionalStyles="px-4 py-4 mb-20 xs:mb-0 xs:px-10" />
+            <Button type='secondary' label="Request information" additionalStyles="px-4 py-4 mb-5 xs:mb-0 xs:px-10" onClick={navigateButton} />
+            <Button type='outlined' label="Start exploring" additionalStyles="px-4 py-4 mb-20 xs:mb-0 xs:px-10" onClick={navigateButton} />
           </div>
         </div>
       </div>
@@ -60,8 +65,8 @@ const ProductDetails = ({ selected, setShowModal, products }: { selected: any, s
           <p className="font-pngme-helvetica text-2xl pb-3">{selected?.title || defaultProduct.title}</p>
           <p className="font-thin pb-8">{selected?.description || defaultProduct.description}</p>
           <div className="flex justify-center lg:justify-start">
-            <Button type='primary' label="Request information" additionalStyles="py-4 px-6 mr-2" />
-            <Button type='outlined' label="Start exploring" additionalStyles="py-4 px-6 ml-2" />
+            <Button type='primary' label="Request information" additionalStyles="py-4 px-6 mr-2" onClick={navigateButton} />
+            <Button type='outlined' label="Start exploring" additionalStyles="py-4 px-6 ml-2" onClick={navigateButton} />
           </div>
         </div>
       </div>
