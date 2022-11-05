@@ -40,7 +40,7 @@ const _MoreQuestions = ({ visibleMobile }: { visibleMobile?: boolean}) => (
   </div>
 )
 
-export const PricingFAQ = ({ styles }) => {
+export const PricingFAQ = ({ styles }: any) => {
   const [questions, setQuestions] = useState(_questions)
   const [selectedId, setSelectedId] = useState<number>(0)
 

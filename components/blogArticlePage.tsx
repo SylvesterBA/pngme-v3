@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import './BlogArticlePage.css';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'

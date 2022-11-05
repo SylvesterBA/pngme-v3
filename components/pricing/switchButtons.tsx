@@ -1,6 +1,6 @@
 import styles from '../../styles/components/SwitchButtons.module.css'
 
-export const SwitchButtons = ({ titles, setTitle }) => (
+export const SwitchButtons = ({ titles, setTitle }: any) => (
   <>
     <input type="checkbox" id="switch" />
     <div className={`switchButtonContainer ${styles.switchButtons}`}>

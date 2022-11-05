@@ -3,7 +3,7 @@ enum EPages {
 	about = "About",
 	careers = "Careers",
 	pricing = "Pricing",
-	developers = "Developers",
+	// developers = "Developers",
 	blog = "Blog",
 }
 

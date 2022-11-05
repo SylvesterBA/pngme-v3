@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const CTAHome = ({ content, ...props }: HeaderProps) => (
 	<div
-		className={`bg-primary-beige bg-[url('/images/bg-pattern-half.svg')] bg-top bg-contain bg-no-repeat items-center justify-center p-12 sm:p-28`}
+		className={`bg-secondary-beige bg-[url('/images/bg-pattern-half.svg')] bg-top bg-contain bg-no-repeat items-center justify-center pt-4 pl-4 pr-4 sm:pt-12 sm:pl-12 sm:pr-12`}
 		{...props}
 	>
 		<Card

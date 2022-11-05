@@ -1,6 +1,6 @@
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { default as countryLabels } from 'react-phone-number-input/locale/en'
+import { default as countryLabels } from 'react-phone-number-input/locale/en.json'
 import { getCountries } from 'react-phone-number-input/input'
 
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
@@ -35,7 +35,7 @@ export const InviteForm = () => {
   const onSubmit: SubmitHandler<InviteFormInputs> = data => {
     console.log(data)
     setTitle("Thank you!")
-    setDescription(_modalDescription)
+    setDescription(_modalDescription as unknown as string)
     setVisible(true)
   };
 

@@ -1,0 +1,10 @@
+.variableOverrides {
+    --swiper-theme-color: white;
+    --swiper-pagination-color: white;
+    --swiper-pagination-bullet-inactive-color: #4d4e4e;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-height: 13px;
+    --swiper-pagination-bullet-width: 13px;
+    --swiper-pagination-bullet-horizontal-gap: 16px;
+    
+}
