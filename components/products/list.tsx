@@ -9,7 +9,7 @@ const ProductsList = (props: any) => {
     {
       key: 'ECR',
       title: 'Enhanced Credit Report',
-      description: `Call a single API endpoint to get a consolidated credit report using Pngme's enhanced data. The alternative credit report can be used alongside Pngme's credit bureau API to view unreported lending data and increase coverage of thin-file customers.`
+      description: `Call a single API endpoint to get a consolidated credit report using Pngme's enhanced data. The alternative credit report can be used alongside Pngme's credit bureau API to view unreported lending data and increase coverage of thin-file customers.`,
     },
     {
       key: 'CBA',
@@ -69,7 +69,7 @@ const ProductsList = (props: any) => {
             {data.map(el => (
               <li
                 key={el.key}
-                className={`uppercase justify-start rounded-full px-6 py-2 my-1 flex items-center ${selected?.key === el.key && !firstRender ? "border bg-primary-yellow" : "border border-transparent"}`}
+                className={`uppercase cursor-pointer justify-start rounded-full px-6 py-2 my-1 flex items-center ${selected?.key === el.key && !firstRender ? "border bg-primary-yellow" : "border border-transparent"}`}
                 onClick={() => {
                   setSelected(el)
                   setFirstRender(false)
@@ -89,7 +89,7 @@ const ProductsList = (props: any) => {
           {data.map((el, i) => (
             <li
               key={el.key}
-              className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${i + 1 % 2 === 0 ? "justify-end" : ""}${selected?.key === el.key ? "border bg-primary-yellow" : "border border-transparent"}`}
+              className={`uppercase cursor-pointer rounded-full px-6 py-2 my-1 flex items-center ${i + 1 % 2 === 0 ? "justify-end" : ""}${selected?.key === el.key ? "border bg-primary-yellow" : "border border-transparent"}`}
               onClick={() => setSelected(el)}
             >
               <Image src={`/icons/products/${el.key.toLowerCase()}.svg`} alt={el.title} width={40} height={40} />
@@ -105,7 +105,7 @@ const ProductsList = (props: any) => {
             {data.map((el, i) => (
               <li
                 key={el.key}
-                className={`uppercase rounded-full px-6 py-2 my-1 flex items-center ${selected?.key === el.key ? "border bg-primary-yellow" : "border border-transparent"}`}
+                className={`uppercase cursor-pointer rounded-full px-6 py-2 my-1 flex items-center ${selected?.key === el.key ? "border bg-primary-yellow" : "border border-transparent"}`}
                 onClick={() => setSelected(el)}
               >
                 <Image src={`/icons/products/${el.key.toLowerCase()}.svg`} alt={el.title} width={40} height={40} />

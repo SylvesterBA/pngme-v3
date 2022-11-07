@@ -4,3 +4,7 @@
   background: rgb(255,224,144);
   background: radial-gradient(circle, rgba(255,224,144,0.7) 0%, rgba(255,255,255,0) 62%);
 }
+
+.productImageContainer {
+  height: 500px;
+}
